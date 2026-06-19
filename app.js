@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 5501;
 
 app.use(express.static("public"));
 app.get("/", (req, res) => {
@@ -11,5 +11,6 @@ app.get("/contact", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+  //console.log(`Servidor escuchando en http://localhost:${port}`);
+  console.log(`Servidor escuchando en http://127.0.0.1:${port}`);
 });
