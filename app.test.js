@@ -2,12 +2,12 @@ const app = require("./app");
 const supertest = require("supertest");
 const request = supertest(app);
 
-describe("/ ", () => {
+describe("/ app.test", () => {
   test(async () => {
-    const response = await request.get(__dirname + "/public/index.html");
+    const response = await request.get("/ index");
     const body = JSON.parse(response.text);
 
-    expectCookies(response.status).toBe(200);
-    expext(body.message).toBe("Index");
+    expect(response.status).toBe(200);
+    expect(body.message).toBe("Index");
   });
 });
